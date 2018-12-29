@@ -159,10 +159,14 @@ GNU General Public License for more details.
 #define PSAB_CROSS       15
 #define PSAB_SQUARE      16
 
+#ifdef __RX600__
+#define CHK(x,y) (x & (1<<y))
+#else
 #define SET(x,y) (x|=(1<<y))
 #define CLR(x,y) (x&=(~(1<<y)))
 #define CHK(x,y) (x & (1<<y))
 #define TOG(x,y) (x^=(1<<y))
+#endif
 
 class PS2X {
   public:
@@ -198,7 +202,7 @@ class PS2X {
     unsigned int last_buttons;
     unsigned int buttons;
 	
-    #ifdef __AVR__
+    #if defined(__AVR__) || defined(__RX600__)
       uint8_t maskToBitNum(uint8_t);
       uint8_t _clk_mask; 
       volatile uint8_t *_clk_oreg;
