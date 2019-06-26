@@ -92,7 +92,7 @@ GNU General Public License for more details.
 #ifdef __AVR__
 	// AVR
 	#include <avr/io.h>
-	#define CTRL_CLK        4
+	#define CTRL_CLK        20
 	#define CTRL_BYTE_DELAY 3
 #else
 	// Pic32...
