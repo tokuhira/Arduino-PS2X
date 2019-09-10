@@ -382,10 +382,10 @@ byte PS2X::readType() {
 
 	  return 0;
 	*/
-
+#ifdef PS2X_COM_DEBUG
 	Serial.print ("Controller_type: ");
 	Serial.println (controller_type, HEX);
-
+#endif
 	if (controller_type == 0x03) {
 		return 1;
 	} else if (controller_type == 0x01 && PS2data[1] == 0x42) {
