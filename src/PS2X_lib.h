@@ -178,8 +178,8 @@ public:
 	                       int);    //will be TRUE if button was JUST pressed
 	boolean ButtonReleased (unsigned
 	                        int);   //will be TRUE if button was JUST released
-	void read_gamepad();
-	boolean  read_gamepad (boolean, byte);
+	boolean read_gamepad();
+	boolean read_gamepad (boolean, byte);
 	byte readType();
 	byte config_gamepad (uint8_t, uint8_t, uint8_t, uint8_t);
 	byte config_gamepad (uint8_t, uint8_t, uint8_t, uint8_t, bool, bool);

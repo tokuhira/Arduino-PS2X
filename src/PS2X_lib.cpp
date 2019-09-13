@@ -83,8 +83,8 @@ unsigned char PS2X::_gamepad_shiftinout (char byte) {
 }
 
 /****************************************************************************************/
-void PS2X::read_gamepad() {
-	read_gamepad (false, 0x00);
+boolean PS2X::read_gamepad() {
+	return read_gamepad (false, 0x00);
 }
 
 /****************************************************************************************/
