@@ -170,8 +170,8 @@ boolean PS2X::read_gamepad (boolean motor1, byte motor2) {
 	last_buttons = buttons; //store the previous buttons states
 
 #if defined(__AVR__)
-	buttons = * (uint16_t *) (PS2data +
-	                          3); //store as one value for multiple functions
+	//store as one value for multiple functions
+	memcpy (&buttons, PS2data + 3, sizeof (uint16_t));
 #else
 	buttons = (uint16_t) (PS2data[4] << 8) +
 	          PS2data[3];   //store as one value for multiple functions
