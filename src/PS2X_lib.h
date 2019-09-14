@@ -93,7 +93,7 @@ GNU General Public License for more details.
 	// AVR
 	#include <avr/io.h>
 	#define CTRL_CLK        20
-	#define CTRL_BYTE_DELAY 3
+	#define CTRL_BYTE_DELAY 4
 #else
 	// Pic32...
 	#include <pins_arduino.h>
