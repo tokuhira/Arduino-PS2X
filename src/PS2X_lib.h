@@ -168,6 +168,7 @@ GNU General Public License for more details.
 
 class PS2X {
 public:
+	boolean Button (uint16_t buttonWord, uint16_t button);
 	boolean Button (
 	    uint16_t);               //will be TRUE if button is being pressed
 	unsigned int ButtonDataByte();
