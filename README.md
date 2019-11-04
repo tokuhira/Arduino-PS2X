@@ -5,10 +5,12 @@ Arduino-PS2X is an easy to use library that will take care of all the low-level 
 
 Please refer to the example sketches to learn how to use this library.
 
-# Wiring the Controller
+## Wiring the Controller
 The seemingly most notorious part prone to errors is wiring the controller to the Arduino. Follow the pinout in the following picture from the [amazing CuriousInventor PS2 Interface Guide](https://store.curiousinventor.com/guides/PS2):
 
 ![PS2 Controller Pinout](https://store.curiousinventor.com/wp-content/uploads/2019/09/wiring.jpg)
+
+**You are advised not to rely on wire colors, but rather on pin positions**. The wires in the image come from an official Sony controller, I expect their colors to be fairly consistent among all Sony controllers, but you shouldn't really trust them.
 
 Lynxmotion sells [this nice breakout connector](https://www.robotshop.com/en/ps2-connector-breakout-board.html) which makes things much easier.
 
