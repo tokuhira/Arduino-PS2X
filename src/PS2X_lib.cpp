@@ -38,8 +38,12 @@ boolean PS2X::ButtonReleased (unsigned int button) {
 }
 
 /****************************************************************************************/
+boolean PS2X::Button (uint16_t buttonWord, uint16_t button) {
+	return ((buttonWord & button) > 0);
+}
+
 boolean PS2X::Button (uint16_t button) {
-	return ((~buttons & button) > 0);
+	return Button (~buttons, button);
 }
 
 /****************************************************************************************/
