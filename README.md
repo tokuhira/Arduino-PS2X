@@ -41,10 +41,9 @@ Arduino-PS2X is provided to you ‘as is’ and without any express or implied w
 
 Here are some projects using this library:
 
--  [Guitar Hero Axe Controlled Flamethrowers](http://www.chrismarion.net/index.php?option=com_content&view=article&id=121:firehero&catid=43:pyrotechnics&Itemid=226) by *Chris Marion*
+-  [FireHero (Guitar Hero Axe Controlled Flamethrowers)](https://www.coolthings.com/firehero/) by *Chris Marion*
 -  [Scanalogic Review](http://store.curiousinventor.com/blog/scanalogic_2_logic_analyzer_review/) by *CuriousInventor*
 -  [SAGAR](http://www.billporter.info/category/projects/autonomous-rover/) by *Bill Porter*
 -  [Remote Controlled Robot](http://www.youtube.com/watch?v=WP2yqu1Rs_M#t=22s) by *teachengineering*
 -  [‘America Dream’ Electric Hammock](http://hackaday.com/2011/04/27/be-lazy-and-get-somewhere-at-the-same-time/) *by Stephen Shaffer*
 -  [Life size R2D2 robot](http://youtu.be/H9BcXc7ixT0) by *Dan*
--  [Simon Says via DDR mat](http://dalpix.com/blog/using-playstation-2-controller-implement-arduino-based-simon-game) by *Dalpix*
