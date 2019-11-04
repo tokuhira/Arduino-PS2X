@@ -1,12 +1,9 @@
 # Arduino Playstation 2 Controller Library Troubleshooting Guide
-
 The following is an almost verbatim copy of [Bill Porter's original Troubleshooting Guide](http://www.billporter.info/2011/03/27/arduino-playstation-2-controller-library-troubleshooting-guide/) for his version of the Arduino-PS2X Library. I don't necessarily agree with what it says, but it's left here for reference until I come up with a better one. Use it at your risk.
 -- SukkoPera
 
 ## Troubleshooting
-
-
-![Arduino Playstation 2 Controller Library Troubleshooting Guide](http://www.billporter.info/wp-content/uploads//2010/06/PS2-588x240.jpg)
+![Arduino + Playstation 2 Controller](http://www.billporter.info/wp-content/uploads//2010/06/PS2-588x240.jpg)
 
 Ok, if you are here, you are having trouble getting your Arduino talking to your PlayStation 2 Controller via the [Arduino-PS2X Library](https://github.com/SukkoPera/Arduino-PS2X). Well, never fear, I stand by my leet coding abilities (Ha! who am I kidding? Really though, the library works, there’s tons of examples using it.) and I’m here to help. The problem is there’s not much I can really do unless you live near North Florida and want to come pay me a visit. It’s hard giving help over the internet! But maybe I can guide you in the right direction with this troubleshooting guide.
 
@@ -18,7 +15,7 @@ A little background first. I have not personally reverse engineered the communic
 
 Ok, now that we are past history of controllers, I’ll tell you this: 90% of the problems people have end up being related to wiring. I can’t look at your setup, so you are going to have to use your best judgment. **Does the wiring look sound?** Controller wires are thin and small and tend to break easily. During prototyping, I cut the ends off my wired controllers, stripped 1/4″ insulation off and **heavily** tinned the wires to create solid ‘pins’ that could be pushed into the female pinheader on the Arduino. This method worked, but was fragile. Later on I bought a few $5 PS2 controller extension cables and cut off the female receptacle end. I soldered the wires from the plug to PCB board and that worked well also.
 
-![](http://www.billporter.info/wp-content/uploads//2010/05/wiring.jpg)
+![Wiring](http://www.billporter.info/wp-content/uploads//2010/05/wiring.jpg)
 **Don’t trust the color scheme on the wiring picture. It can vary! Instead, use a voltmeter and test continuity between pin positions in the connector and the bare wires.** I’ve had a few people report odd color schemes, and a few not realize what end of the connector they were looking at and got the wiring completely backwards. **A quick check is to power up the controller, and pushing the ‘Analog’ button. Either the LED should have been on when it powered up, or it should light up when you press the button.** If not, the controller isn’t getting power and you probably have the wiring reversed.
 
 Alright, so you trust the wiring job, what next?
