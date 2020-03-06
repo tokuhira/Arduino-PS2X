@@ -95,6 +95,11 @@ GNU General Public License for more details.
 	#define CTRL_CLK        20
 	#define CTRL_BYTE_DELAY 4
 #else
+#ifdef ESP8266
+	#define CTRL_CLK        5
+	#define CTRL_CLK_HIGH   5
+	#define CTRL_BYTE_DELAY 18
+#else
 	// Pic32...
 	#include <pins_arduino.h>
 	#define CTRL_CLK        5

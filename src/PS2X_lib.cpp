@@ -2,7 +2,9 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdint.h>
+#ifdef __AVR__
 #include <avr/io.h>
+#endif
 #if ARDUINO > 22
 	#include "Arduino.h"
 #else
@@ -490,6 +492,66 @@ inline void PS2X::ATT_CLR (void) {
 
 inline bool PS2X::DAT_CHK (void) {
 	return (*_dat_ireg & _dat_mask) ? true : false;
+}
+
+#elif defined(__RX600__)
+// https://lipoyang.hatenablog.com/entry/2019/01/01/173833
+inline void  PS2X::CLK_SET(void) {
+	*_clk_oreg |= _clk_mask;
+}
+
+inline void	PS2X::CLK_CLR(void) {
+	*_clk_oreg &= ~_clk_mask;
+}
+
+inline void	PS2X::CMD_SET(void) {
+	*_cmd_oreg |= _cmd_mask;
+}
+
+inline void	PS2X::CMD_CLR(void) {
+	*_cmd_oreg &= ~_cmd_mask;
+}
+
+inline void	PS2X::ATT_SET(void) {
+	*_att_oreg |= _att_mask ;
+}
+
+inline void PS2X::ATT_CLR(void) {
+	*_att_oreg &= ~_att_mask;
+}
+
+inline bool PS2X::DAT_CHK(void) {
+	return (*_dat_ireg & _dat_mask) ? true : false;
+}
+
+#elif defined(ESP8266)
+// Let's just use digitalWrite() on ESP8266.
+inline void	PS2X::CLK_SET(void) {
+	digitalWrite(_clk_pin, HIGH);
+}
+
+inline void	PS2X::CLK_CLR(void) {
+	digitalWrite(_clk_pin, LOW);
+}
+
+inline void	PS2X::CMD_SET(void) {
+	digitalWrite(_cmd_pin, HIGH);
+}
+
+inline void	PS2X::CMD_CLR(void) {
+	digitalWrite(_cmd_pin, LOW);
+}
+
+inline void	PS2X::ATT_SET(void) {
+	digitalWrite(_att_pin, HIGH);
+}
+
+inline void PS2X::ATT_CLR(void) {
+	digitalWrite(_att_pin, LOW);
+}
+
+inline bool PS2X::DAT_CHK(void) {
+	return digitalRead(_dat_pin) ? true : false;
 }
 
 #else
