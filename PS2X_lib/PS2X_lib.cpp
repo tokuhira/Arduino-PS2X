@@ -95,7 +95,7 @@ boolean PS2X::read_gamepad(boolean motor1, byte motor2) {
    if(motor2 != 0x00)
       motor2 = map(motor2,0,255,0x40,0xFF); //noting below 40 will make it spin
 
-   byte dword[9] = {0x01,0x42,0,motor1,motor2,0,0,0,0};
+   char dword[9] = {0x01,0x42,0,(char)motor1,(char)motor2,0,0,0,0};
    byte dword2[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
    // Try a few times to get valid data...
@@ -171,7 +171,7 @@ byte PS2X::config_gamepad(uint8_t clk, uint8_t cmd, uint8_t att, uint8_t dat, bo
 
   byte temp[sizeof(type_read)];
 
-#ifdef __AVR__
+#if defined(__AVR__) || defined(__RX600__)
   _clk_mask = digitalPinToBitMask(clk);
   _clk_oreg = portOutputRegister(digitalPinToPort(clk));
   _cmd_mask = digitalPinToBitMask(cmd);
@@ -442,6 +442,36 @@ inline void PS2X::ATT_CLR(void) {
   cli();
   *_att_oreg &= ~_att_mask;
   SREG = old_sreg;
+}
+
+inline bool PS2X::DAT_CHK(void) {
+  return (*_dat_ireg & _dat_mask) ? true : false;
+}
+
+#elif defined(__RX600__)
+
+inline void  PS2X::CLK_SET(void) {
+  *_clk_oreg |= _clk_mask;
+}
+
+inline void  PS2X::CLK_CLR(void) {
+  *_clk_oreg &= ~_clk_mask;
+}
+
+inline void  PS2X::CMD_SET(void) {
+  *_cmd_oreg |= _cmd_mask;
+}
+
+inline void  PS2X::CMD_CLR(void) {
+  *_cmd_oreg &= ~_cmd_mask;
+}
+
+inline void  PS2X::ATT_SET(void) {
+  *_att_oreg |= _att_mask ;
+}
+
+inline void PS2X::ATT_CLR(void) {
+  *_att_oreg &= ~_att_mask;
 }
 
 inline bool PS2X::DAT_CHK(void) {

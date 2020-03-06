@@ -1,3 +1,6 @@
+2018-12-29    Update to support GR-SAKURA and GR-CITRUS.
+by Bizan Nishimura
+
 /******************************************************************
 *  Super amazing PS2 controller Arduino Library v1.8
 *		details and example sketch: 
