@@ -94,8 +94,8 @@ GNU General Public License for more details.
 	#include <avr/io.h>
 	#define CTRL_CLK        20
 	#define CTRL_BYTE_DELAY 4
-#else
-#ifdef ESP8266
+#elif defined(ESP8266)
+	// ESP8266
 	#define CTRL_CLK        5
 	#define CTRL_CLK_HIGH   5
 	#define CTRL_BYTE_DELAY 18
