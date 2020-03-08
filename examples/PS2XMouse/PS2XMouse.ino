@@ -19,7 +19,7 @@ int lastSwitchState = LOW;        // previous switch state
 void setup() {
 	Serial.begin (57600);
 
-	error = ps2x.config_gamepad (15, 14, 13, 12, true,
+	error = ps2x.config_gamepad (13, 11, 10, 12, true,
 	                             true); //setup pins and settings:  GamePad(clock, command, attention, data, Pressures?, Rumble?) check for error
 
 	if (error == 0) {

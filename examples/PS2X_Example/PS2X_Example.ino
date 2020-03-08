@@ -2,14 +2,15 @@
 
 /******************************************************************
  * set pins connected to PS2 controller:
- *   - 1e column: original
- *   - 2e colmun: Stef?
+ *   - 1e column: SPI align
+ *   - 2e column: original
+ *   - 3e colmun: Stef?
  * replace pin numbers by the ones you use
  ******************************************************************/
-#define PS2_DAT        13  //14    
-#define PS2_CMD        11  //15
-#define PS2_SEL        10  //16
-#define PS2_CLK        12  //17
+#define PS2_DAT        12  //13  //14
+#define PS2_CMD        11  //11  //15
+#define PS2_SEL        10  //10  //16
+#define PS2_CLK        13  //12  //17
 
 /******************************************************************
  * select modes of PS2 controller:
